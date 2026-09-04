@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Tiendita Don Nacho</title>
+
+<link
+    rel="stylesheet"
+    href="style.css">
+
+
+</head>
+
+<body>
+
+<header>
+
+
+<h1>🛒 Tiendita Don Nacho</h1>
+
+<nav>
+
+    <button id="carritoBtn">
+        🛍️ Carrito (<span id="contador">0</span>)
+    </button>
+
+    <button id="historialBtn">
+        📋 Historial
+    </button>
+
+    <button id="favoritosBtn">
+        ❤️ Favoritos
+    </button>
+
+
+    <!-- USUARIO -->
+
+    <div id="usuarioSesion" class="usuario-sesion">
+
+        <span id="nombreUsuario">
+            👤 Invitado
+        </span>
+
+        <button
+            id="loginBtn"
+            type="button">
+
+            🔐 Iniciar sesión
+
+        </button>
+
+        <button
+            id="logoutBtn"
+            type="button"
+            style="display: none;">
+
+            🚪 Cerrar sesión
+
+        </button>
+
+    </div>
+
+</nav>
+
+
+</header>
+
+<div
+    id="loginPopup"
+    class="popup">
+
+
+<div class="popup-contenido">
+
+    <h2>
+        🔐 Cuenta de usuario
+    </h2>
+
+    <div class="login-form">
+
+        <h3>
+            🔑 Iniciar sesión
+        </h3>
+
+        <label for="usuarioLogin">
+            Usuario
+        </label>
+
+        <input
+            type="text"
+            id="usuarioLogin"
+            placeholder="Escribe tu usuario">
+
+
+        <label for="claveLogin">
+            Contraseña
+        </label>
+
+        <input
+            type="password"
+            id="claveLogin"
+            placeholder="Escribe tu contraseña">
+
+
+        <button
+            id="iniciarSesion"
+            type="button">
+
+            🔐 Iniciar sesión
+
+        </button>
+
+
+        <hr>
+
+
+        <h3>
+            📝 Crear cuenta
+        </h3>
+
+        <label for="usuarioRegistro">
+            Nuevo usuario
+        </label>
+
+        <input
+            type="text"
+            id="usuarioRegistro"
+            placeholder="Crea un usuario">
+
+
+        <label for="claveRegistro">
+            Nueva contraseña
+        </label>
+
+        <input
+            type="password"
+            id="claveRegistro"
+            placeholder="Crea una contraseña">
+
+
+        <button
+            id="registrarUsuario"
+            type="button">
+
+            📝 Registrarme
+
+        </button>
+
+
+        <p id="mensajeLogin"></p>
+
+
+        <button
+            id="cerrarLogin"
+            type="button">
+
+            Cerrar
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+<section class="hero">
+
+
+<div class="hero-contenido">
+
+    <h2>
+        Todo lo que necesitas,
+        en un solo lugar 🛒
+    </h2>
+
+    <p>
+        Encuentra los mejores electrodomésticos
+        para tu hogar a excelentes precios.
+    </p>
+
+    <a
+        href="#productos"
+        class="btn-hero">
+
+        🛍️ Ver productos
+
+    </a>
+
+</div>
+
+
+</section>
+
+<div class="barra-busqueda">
+
+
+<input
+    type="text"
+    id="buscador"
+    placeholder="🔎 Buscar producto...">
+
+
+</div>
+
+<section class="filtros">
+
+
+<h2>
+    🔎 Filtrar productos
+</h2>
+
+<div class="filtros-contenedor">
+
+    <div class="filtro">
+
+        <label for="filtroCategoria">
+            Categoría
+        </label>
+
+        <select id="filtroCategoria">
+
+            <option value="todas">
+                Todas las categorías
+            </option>
+
+            <option value="Entretenimiento">
+                Entretenimiento
+            </option>
+
+            <option value="Línea blanca">
+                Línea blanca
+            </option>
+
+            <option value="Climatización">
+                Climatización
+            </option>
+
+            <option value="Cocina">
+                Cocina
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="filtro">
+
+        <label for="filtroPrecio">
+            Precio
+        </label>
+
+        <select id="filtroPrecio">
+
+            <option value="todos">
+                Todos los precios
+            </option>
+
+            <option value="0-5000">
+                $0 - $5,000
+            </option>
+
+            <option value="5000-8000">
+                $5,000 - $8,000
+            </option>
+
+            <option value="8000-12000">
+                $8,000 - $12,000
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="filtro">
+
+        <label for="ordenProductos">
+            Ordenar
+        </label>
+
+        <select id="ordenProductos">
+
+            <option value="normal">
+                Normal
+            </option>
+
+            <option value="menor">
+                Menor a mayor precio
+            </option>
+
+            <option value="mayor">
+                Mayor a menor precio
+            </option>
+
+            <option value="popularidad">
+                Más populares
+            </option>
+
+        </select>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<main>
+
+
+<section id="productos">
+
+
+    <!-- TELEVISIÓN -->
+
+    <div class="producto">
+
+        <button
+            class="btn-favorito"
+            type="button"
+            data-id="1">
+
+            🤍
+
+        </button>
+
+        <img
+            src="imagenes/Captura de pantalla 2026-09-03 183227.png"
+            alt="Televisión">
+
+        <h3>
+            Televisión
+        </h3>
+
+        <p>
+            $5,000
+        </p>
+
+        <p class="stock-producto">
+            📦 Stock disponible: 10
+        </p>
+
+        <button
+            class="btn-agregar"
+            data-id="1">
+
+            🛒 Agregar
+
+        </button>
+
+        <button
+            class="btn-quick-view"
+            type="button"
+            data-id="1">
+
+            👀 Vista rápida
+
+        </button>
+
+    </div>
+
+
+    <!-- LAVADORA -->
+
+    <div class="producto">
+
+        <button
+            class="btn-favorito"
+            type="button"
+            data-id="2">
+
+            🤍
+
+        </button>
+
+        <img
+            src="imagenes/Captura de pantalla 2026-09-03 183928.png"
+            alt="Lavadora">
+
+        <h3>
+            Lavadora
+        </h3>
+
+        <p>
+            $8,000
+        </p>
+
+        <p class="stock-producto">
+            📦 Stock disponible: 10
+        </p>
+
+        <button
+            class="btn-agregar"
+            data-id="2">
+
+            🛒 Agregar
+
+        </button>
+
+        <button
+            class="btn-quick-view"
+            type="button"
+            data-id="2">
+
+            👀 Vista rápida
+
+        </button>
+
+    </div>
+
+
+    <!-- REFRIGERADOR -->
+
+    <div class="producto">
+
+        <button
+            class="btn-favorito"
+            type="button"
+            data-id="3">
+
+            🤍
+
+        </button>
+
+        <img
+            src="imagenes/Captura de pantalla 2026-09-03 184103.png"
+            alt="Refrigerador">
+
+        <h3>
+            Refrigerador
+        </h3>
+
+        <p>
+            $12,000
+        </p>
+
+        <p class="stock-producto">
+            📦 Stock disponible: 10
+        </p>
+
+        <button
+            class="btn-agregar"
+            data-id="3">
+
+            🛒 Agregar
+
+        </button>
+
+        <button
+            class="btn-quick-view"
+            type="button"
+            data-id="3">
+
+            👀 Vista rápida
+
+        </button>
+
+    </div>
+
+
+    <!-- AIRE ACONDICIONADO -->
+
+    <div class="producto">
+
+        <button
+            class="btn-favorito"
+            type="button"
+            data-id="4">
+
+            🤍
+
+        </button>
+
+        <img
+            src="imagenes/Captura de pantalla 2026-09-03 184246.png"
+            alt="Aire Acondicionado">
+
+        <h3>
+            Aire Acondicionado
+        </h3>
+
+        <p>
+            $10,000
+        </p>
+
+        <p class="stock-producto">
+            📦 Stock disponible: 10
+        </p>
+
+        <button
+            class="btn-agregar"
+            data-id="4">
+
+            🛒 Agregar
+
+        </button>
+
+        <button
+            class="btn-quick-view"
+            type="button"
+            data-id="4">
+
+            👀 Vista rápida
+
+        </button>
+
+    </div>
+
+
+    <!-- VENTILADOR -->
+
+    <div class="producto">
+
+        <button
+            class="btn-favorito"
+            type="button"
+            data-id="5">
+
+            🤍
+
+        </button>
+
+        <img
+            src="imagenes/Captura de pantalla 2026-09-03 184417.png"
+            alt="Ventilador">
+
+        <h3>
+            Ventilador
+        </h3>
+
+        <p>
+            $1,500
+        </p>
+
+        <p class="stock-producto">
+            📦 Stock disponible: 10
+        </p>
+
+        <button
+            class="btn-agregar"
+            data-id="5">
+
+            🛒 Agregar
+
+        </button>
+
+        <button
+            class="btn-quick-view"
+            type="button"
+            data-id="5">
+
+            👀 Vista rápida
+
+        </button>
+
+    </div>
+
+
+    <!-- ESTUFA -->
+
+    <div class="producto">
+
+        <button
+            class="btn-favorito"
+            type="button"
+            data-id="6">
+
+            🤍
+
+        </button>
+
+        <img
+            src="imagenes/Captura de pantalla 2026-09-03 185648.png"
+            alt="Estufa">
+
+        <h3>
+            Estufa
+        </h3>
+
+        <p>
+            $7,000
+        </p>
+
+        <p class="stock-producto">
+            📦 Stock disponible: 10
+        </p>
+
+        <button
+            class="btn-agregar"
+            data-id="6">
+
+            🛒 Agregar
+
+        </button>
+
+        <button
+            class="btn-quick-view"
+            type="button"
+            data-id="6">
+
+            👀 Vista rápida
+
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+<div
+    id="carritoPopup"
+    class="popup carrito-drawer">
+
+<div class="popup-contenido">
+
+
+    <div class="titulo-carrito">
+
+        <h2>
+            🛍️ Carrito
+        </h2>
+
+        <button
+            id="cerrarCarrito"
+            type="button">
+
+            ✖
+
+        </button>
+
+    </div>
+
+
+    <div id="listaCarrito"></div>
+
+
+    <div class="checkout-pasos">
+
+        <div
+            class="checkout-paso activo"
+            data-paso="1">
+
+            <span>
+                1
+            </span>
+
+            <small>
+                Envío
+            </small>
+
+        </div>
+
+
+        <div class="checkout-linea"></div>
+
+
+        <div
+            class="checkout-paso"
+            data-paso="2">
+
+            <span>
+                2
+            </span>
+
+            <small>
+                Resumen
+            </small>
+
+        </div>
+
+
+        <div class="checkout-linea"></div>
+
+
+        <div
+            class="checkout-paso"
+            data-paso="3">
+
+            <span>
+                3
+            </span>
+
+            <small>
+                Pago
+            </small>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="calculadora-envio">
+
+        <h3>
+            🚚 Calculadora de envío
+        </h3>
+
+        <label for="codigoPostal">
+            Código postal
+        </label>
+
+        <input
+            type="text"
+            id="codigoPostal"
+            placeholder="Ej. 88000"
+            maxlength="5">
+
+        <button
+            type="button"
+            id="calcularEnvio">
+
+            Calcular envío
+
+        </button>
+
+        <p id="mensajeEnvio"></p>
+
+
+        <button
+            type="button"
+            id="btnPaso2"
+            class="btn-siguiente">
+
+            Continuar ➡️
+
+        </button>
+
+    </div>
+
+
+    <div class="resumen-compra">
+
+        <h3>
+            🧾 Resumen
+        </h3>
+
+        <p>
+            Subtotal:
+            $<span id="subtotal">0.00</span>
+        </p>
+
+        <p>
+            Impuesto (16%):
+            $<span id="impuesto">0.00</span>
+        </p>
+
+        <p>
+            Envío:
+            $<span id="envio">0.00</span>
+        </p>
+
+        <p>
+            Descuento:
+            -$<span id="descuento">0.00</span>
+        </p>
+
+        <hr>
+
+        <h2>
+            Total:
+            $<span id="total">0.00</span>
+        </h2>
+
+
+        <button
+            type="button"
+            id="btnPaso3"
+            class="btn-siguiente">
+
+            Continuar al pago ➡️
+
+        </button>
+
+    </div>
+
+
+
+    <div class="cupon">
+
+        <h3>
+            🎟️ Cupón
+        </h3>
+
+        <input
+            type="text"
+            id="codigoCupon"
+            placeholder="Ej. NACHO10">
+
+        <button
+            type="button"
+            id="aplicarCupon">
+
+            Aplicar cupón
+
+        </button>
+
+        <p id="mensajeCupon"></p>
+
+    </div>
+
+
+
+    <div class="metodos-pago">
+
+        <h3>
+            💳 Método de pago
+        </h3>
+
+        <button
+            class="btn-pago"
+            data-metodo="Tarjeta">
+
+            💳 Tarjeta
+
+        </button>
+
+        <button
+            class="btn-pago"
+            data-metodo="PayPal">
+
+            🅿️ PayPal
+
+        </button>
+
+        <button
+            class="btn-pago"
+            data-metodo="MercadoPago">
+
+            💰 MercadoPago
+
+        </button>
+
+    </div>
+
+
+    <div class="form-pago">
+
+        <h3>
+            👤 Datos del cliente
+        </h3>
+
+        <label for="nombreCliente">
+            Nombre
+        </label>
+
+        <input
+            type="text"
+            id="nombreCliente"
+            placeholder="Nombre del cliente">
+
+
+        <label for="metodoSeleccionado">
+            Método seleccionado
+        </label>
+
+        <input
+            type="text"
+            id="metodoSeleccionado"
+            placeholder="Selecciona un método"
+            readonly>
+
+
+        <!-- TARJETA -->
+
+        <div
+            id="datosTarjeta"
+            class="datos-pago"
+            style="display: none;">
+
+            <h3>
+                💳 Datos de tarjeta
+            </h3>
+
+            <label for="numeroTarjeta">
+                Número de tarjeta
+            </label>
+
+            <input
+                type="text"
+                id="numeroTarjeta"
+                placeholder="0000 0000 0000 0000"
+                maxlength="19">
+
+
+            <label for="caducidad">
+                Caducidad
+            </label>
+
+            <input
+                type="text"
+                id="caducidad"
+                placeholder="MM/AA"
+                maxlength="5">
+
+
+            <label for="cvv">
+                CVV
+            </label>
+
+            <input
+                type="text"
+                id="cvv"
+                placeholder="000"
+                maxlength="3">
+
+        </div>
+
+
+
+        <div
+            id="datosPayPal"
+            class="datos-pago"
+            style="display: none;">
+
+            <h3>
+                🅿️ Datos de PayPal
+            </h3>
+
+            <label for="correoPayPal">
+                Correo
+            </label>
+
+            <input
+                type="email"
+                id="correoPayPal"
+                placeholder="ejemplo@correo.com">
+
+
+            <label for="clavePayPal">
+                Clave
+            </label>
+
+            <input
+                type="password"
+                id="clavePayPal"
+                placeholder="••••••••">
+
+        </div>
+
+
+        <div
+            id="datosMercadoPago"
+            class="datos-pago"
+            style="display: none;">
+
+            <h3>
+                💰 Datos de MercadoPago
+            </h3>
+
+            <label for="usuarioMercadoPago">
+                Usuario
+            </label>
+
+            <input
+                type="text"
+                id="usuarioMercadoPago"
+                placeholder="Usuario">
+
+
+            <label for="claveMercadoPago">
+                Clave
+            </label>
+
+            <input
+                type="password"
+                id="claveMercadoPago"
+                placeholder="••••••••">
+
+        </div>
+
+    </div>
+
+
+    <button
+        id="confirmarCompra"
+        type="button">
+
+        ✅ Confirmar compra
+
+    </button>
+
+</div>
+
+
+</div>
+
+<div
+    id="procesandoPopup"
+    class="popup">
+
+<div class="popup-contenido procesando-compra">
+
+    <div class="spinner"></div>
+
+    <h2>
+        ⏳ Procesando compra...
+    </h2>
+
+    <p>
+        Estamos preparando tu pedido.
+    </p>
+
+</div>
+
+
+</div>
+
+<div
+    id="historialPopup"
+    class="popup">
+
+
+<div class="popup-contenido">
+
+    <h2>
+        📋 Historial de compras
+    </h2>
+
+    <div id="listaHistorial"></div>
+
+    <button
+        id="cerrarHistorial"
+        type="button">
+
+        Cerrar
+
+    </button>
+
+</div>
+
+</div>
+
+<div
+    id="favoritosPopup"
+    class="popup">
+
+
+<div class="popup-contenido">
+
+    <h2>
+        ❤️ Favoritos
+    </h2>
+
+    <div id="listaFavoritos"></div>
+
+    <button
+        id="cerrarFavoritos"
+        type="button">
+
+        Cerrar
+
+    </button>
+
+</div>
+
+
+</div>
+
+<div
+    id="productoPopup"
+    class="popup">
+
+
+<div class="popup-contenido">
+
+    <h2 id="detalleNombre"></h2>
+
+    <div id="galeriaImagenes"></div>
+
+    <p id="detalleDescripcion"></p>
+
+
+    <label for="detalleCantidad">
+        Cantidad
+    </label>
+
+    <input
+        type="number"
+        id="detalleCantidad"
+        min="1"
+        max="10"
+        value="1">
+
+
+    <label for="detalleColor">
+        Color
+    </label>
+
+    <select id="detalleColor">
+
+        <option value="Negro">
+            Negro
+        </option>
+
+        <option value="Blanco">
+            Blanco
+        </option>
+
+        <option value="Gris">
+            Gris
+        </option>
+
+    </select>
+
+
+    <label for="detalleTalla">
+        Tamaño
+    </label>
+
+    <select id="detalleTalla">
+
+        <option value="Chico">
+            Chico
+        </option>
+
+        <option value="Mediano">
+            Mediano
+        </option>
+
+        <option value="Grande">
+            Grande
+        </option>
+
+    </select>
+
+
+    <h3>
+        💰 Precio:
+        $<span id="detallePrecio">0</span>
+    </h3>
+
+
+    <p id="detalleStock">
+        📦 Stock disponible: 10
+    </p>
+
+
+    <button
+        id="agregarDetalle"
+        type="button">
+
+        🛒 Agregar al carrito
+
+    </button>
+
+
+    <button
+        id="cerrarDetalle"
+        type="button">
+
+        Cerrar
+
+    </button>
+
+</div>
+
+
+</div>
+
+<div
+    id="confirmacionPopup"
+    class="popup">
+
+
+<div class="popup-contenido">
+
+    <h2>
+        🎉 ¡Compra realizada!
+    </h2>
+
+    <p>
+        Tu compra se realizó correctamente.
+    </p>
+
+
+    <h3>
+        Número de orden:
+    </h3>
+
+    <h2 id="numeroOrden"></h2>
+
+
+    <div id="resumenConfirmacion"></div>
+
+
+    <p>
+        Gracias por comprar en
+        Tiendita Don Nacho 🛒
+    </p>
+
+
+    <button
+        id="cerrarConfirmacion"
+        type="button">
+
+        Continuar
+
+    </button>
+
+</div>
+
+
+</div>
+
+<footer>
+
+
+<p>
+    📦 Políticas de envío |
+    📞 Contacto: contacto@tiendita.com |
+    🌐 Síguenos en redes sociales:
+</p>
+
+<div class="redes-sociales">
+
+    <a
+        href="https://www.facebook.com/"
+        target="_blank">
+        Facebook
+    </a>
+
+    <a
+        href="https://www.instagram.com/"
+        target="_blank">
+        Instagram
+    </a>
+
+    <a
+        href="https://www.tiktok.com/"
+        target="_blank">
+        TikTok
+    </a>
+
+    <a
+        href="https://www.youtube.com/"
+        target="_blank">
+        YouTube
+    </a>
+
+</div>
+
+
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
